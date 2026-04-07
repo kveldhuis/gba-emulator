@@ -1,0 +1,35 @@
+{
+  "name": "GBA Emulator (Zig)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "containerEnv": {
+    "GH_TOKEN": "${localEnv:GH_TOKEN}"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/copilot-cli:1": {}
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.config/gh,target=/root/.config/gh,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ziglang.vscode-zig",
+        "github.copilot",
+        "github.copilot-chat"
+      ],
+      "settings": {
+        "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+        "chat.tools.global.autoApprove": true,
+        "chat.agent.maxRequests": 100,
+        "chat.customAgentInSubagent.enabled": true,
+        "chat.tools.terminal.autoReplyToPrompts": true,
+        "chat.useAgentSkills": true,
+        "chat.useNestedAgentsMdFiles": true
+      }
+    }
+  }
+}

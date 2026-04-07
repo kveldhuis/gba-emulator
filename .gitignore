@@ -1,0 +1,31 @@
+# Zig build artifacts
+zig-cache/
+zig-out/
+
+# Zig build system
+build/
+.zig-cache/
+
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+
+# Debug symbols
+*.pdb
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

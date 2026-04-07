@@ -1,3 +1,8 @@
+---
+status: done
+epic: "01 - Project Setup"
+---
+
 # Story 1.1 — Zig project initialiseren
 
 **Epic:** 01 - Project Setup & Infrastructuur

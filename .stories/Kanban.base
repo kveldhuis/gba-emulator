@@ -1,0 +1,116 @@
+views:
+  - type: kanban-view
+    name: View
+    filters:
+      and:
+        - epic == "01 - Project Setup"
+    columnOrders:
+      file.file:
+        - 01-project-setup/1.3-rom-laden.md
+        - 01-project-setup/1.4-testing.md
+        - 01-project-setup/1.5-debug-tooling.md
+        - 01-project-setup/DONE-1.1-zig-project-init.md
+        - 01-project-setup/DONE-1.2-sdl-venster.md
+        - 02-memory-bus/2.1-memory-map.md
+        - 02-memory-bus/2.2-bus-gamepak.md
+        - 02-memory-bus/2.3-save-types.md
+        - 03-cpu-arm/3.1-cpu-state-registers.md
+        - 03-cpu-arm/3.10-swi.md
+        - 03-cpu-arm/3.11-mrs-msr.md
+        - 03-cpu-arm/3.2-fetch-decode-execute.md
+        - 03-cpu-arm/3.3-arm-decoding.md
+        - 03-cpu-arm/3.4-data-processing.md
+        - 03-cpu-arm/3.5-branch.md
+        - 03-cpu-arm/3.6-load-store.md
+        - 03-cpu-arm/3.7-halfword-signed-load-store.md
+        - 03-cpu-arm/3.8-block-data-transfer.md
+        - 03-cpu-arm/3.9-multiply.md
+        - 04-cpu-thumb/4.1-thumb-decoding.md
+        - 04-cpu-thumb/4.10-multiple-load-store.md
+        - 04-cpu-thumb/4.11-conditional-branch-swi.md
+        - 04-cpu-thumb/4.12-unconditional-long-branch.md
+        - 04-cpu-thumb/4.2-move-add-sub-cmp.md
+        - 04-cpu-thumb/4.3-alu-operaties.md
+        - 04-cpu-thumb/4.4-hi-register-bx.md
+        - 04-cpu-thumb/4.5-load-store.md
+        - 04-cpu-thumb/4.6-halfword-load-store.md
+        - 04-cpu-thumb/4.7-sp-relative-load-store.md
+        - 04-cpu-thumb/4.8-load-address.md
+        - 04-cpu-thumb/4.9-sp-offset-push-pop.md
+        - 05-ppu/5.1-scanline-timing.md
+        - 05-ppu/5.2-mode3-bitmap.md
+        - 05-ppu/5.3-mode4-paletted.md
+        - 05-ppu/5.4-mode0-tiled.md
+        - 05-ppu/5.5-mode1-mode2-affine.md
+        - 05-ppu/5.6-sprites.md
+        - 05-ppu/5.7-windowing-blending.md
+        - 05-ppu/5.8-affine-sprites.md
+        - 06-io-registers/6.1-io-dispatcher.md
+        - 07-input/7.1-joypad.md
+        - 08-interrupts/8.1-irq-controller.md
+        - 09-timers/9.1-timer-controller.md
+        - 10-dma/10.1-dma-controller.md
+        - 11-audio/11.1-direct-sound.md
+        - 11-audio/11.2-psg-kanalen.md
+        - 12-scheduler/12.1-event-scheduler.md
+        - 13-bios/13.1-bios-hle.md
+        - 14-cross-platform/14.1-cross-platform-builds.md
+        - 15-accuracy-high/15.1-wait-states.md
+        - 15-accuracy-high/15.2-prefetch-buffer.md
+        - 15-accuracy-high/15.3-dma-timing.md
+        - 15-accuracy-high/15.4-mid-scanline.md
+        - 15-accuracy-high/15.5-mosaic.md
+        - 15-accuracy-high/README.md
+        - 16-accuracy-medium/16.1-rtc.md
+        - 16-accuracy-medium/16.2-open-bus.md
+        - 16-accuracy-medium/16.3-advanced-sprites.md
+        - 16-accuracy-medium/16.4-bios-protection.md
+        - 16-accuracy-medium/README.md
+        - 17-accuracy-low/17.1-serial-gpio.md
+        - 17-accuracy-low/17.2-cycle-exact-ppu.md
+        - 17-accuracy-low/README.md
+        - README.md
+        - Untitled.base
+      note.epic:
+        - 01 - Project Setup
+        - 02 - Memory Bus
+        - 03 - CPU ARM
+        - 04 - CPU Thumb
+        - 05 - PPU
+        - 06 - I/O Registers
+        - 07 - Input
+        - 08 - Interrupts
+        - 09 - Timers
+        - 10 - DMA
+        - 11 - Audio
+        - 12 - Scheduler
+        - 13 - BIOS
+        - 14 - Cross-Platform
+        - 15 - Accuracy High
+        - 16 - Accuracy Medium
+        - 17 - Accuracy Low
+        - Uncategorized
+      note.status:
+        - todo
+        - in progress
+        - done
+    cardOrders:
+      file.file: {}
+      note.epic: {}
+      note.status:
+        Uncategorized:
+          - In Progress.md
+        done:
+          - 01-project-setup/DONE-1.1-zig-project-init.md
+          - 01-project-setup/DONE-1.2-sdl-venster.md
+          - In Progress.md
+        in progress:
+          - 01-project-setup/1.3-rom-laden.md
+        todo:
+          - 01-project-setup/1.4-testing.md
+          - 01-project-setup/1.5-debug-tooling.md
+    columnColors:
+      file.file: {}
+      note.epic: {}
+      note.status: {}
+    groupByProperty: note.status

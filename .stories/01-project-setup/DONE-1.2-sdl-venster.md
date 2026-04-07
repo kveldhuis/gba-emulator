@@ -1,3 +1,8 @@
+---
+status: done
+epic: "01 - Project Setup"
+---
+
 # Story 1.2 — SDL3 venster openen
 
 **Epic:** 01 - Project Setup & Infrastructuur
