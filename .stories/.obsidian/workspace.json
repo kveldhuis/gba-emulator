@@ -184,11 +184,11 @@
   },
   "active": "ae2ed60a90635d5e",
   "lastOpenFiles": [
-    "README.md",
-    "Kanban.base",
-    "In Progress.md",
     "01-project-setup/1.3-rom-laden.md",
-    "01-project-setup/DONE-1.2-sdl-venster.md",
-    "01-project-setup/DONE-1.1-zig-project-init.md"
+    "Kanban.base",
+    "01-project-setup/1.2-sdl-venster.md",
+    "01-project-setup/1.1-zig-project-init.md",
+    "README.md",
+    "In Progress.md"
   ]
 }
