@@ -184,9 +184,9 @@
   },
   "active": "ae2ed60a90635d5e",
   "lastOpenFiles": [
-    "01-project-setup/1.4-testing.md",
-    "Kanban.base",
     "01-project-setup/1.3-rom-laden.md",
+    "Kanban.base",
+    "01-project-setup/1.4-testing.md",
     "01-project-setup/1.2-sdl-venster.md",
     "01-project-setup/1.1-zig-project-init.md",
     "README.md",
