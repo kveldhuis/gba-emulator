@@ -104,10 +104,10 @@ views:
           - 01-project-setup/1.1-zig-project-init.md
           - 01-project-setup/1.2-sdl-venster.md
           - 01-project-setup/1.3-rom-laden.md
-        in progress: []
-        todo:
           - 01-project-setup/1.4-testing.md
+        in progress:
           - 01-project-setup/1.5-debug-tooling.md
+        todo: []
     columnColors:
       file.file: {}
       note.epic: {}

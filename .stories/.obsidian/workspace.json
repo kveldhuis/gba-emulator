@@ -11,13 +11,14 @@
             "id": "ae2ed60a90635d5e",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Kanban.base",
-                "viewName": "View"
+                "file": "01-project-setup/1.5-debug-tooling.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "columns",
-              "title": "Kanban"
+              "icon": "lucide-file",
+              "title": "1.5-debug-tooling"
             }
           }
         ]
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kanban.base",
+                "file": "01-project-setup/1.5-debug-tooling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Kanban"
+              "title": "Backlinks for 1.5-debug-tooling"
             }
           },
           {
@@ -112,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kanban.base",
+                "file": "01-project-setup/1.5-debug-tooling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Kanban"
+              "title": "Outgoing links from 1.5-debug-tooling"
             }
           },
           {
@@ -155,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kanban.base",
+                "file": "01-project-setup/1.5-debug-tooling.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Kanban"
+              "title": "Outline of 1.5-debug-tooling"
             }
           }
         ]
@@ -184,9 +185,9 @@
   },
   "active": "ae2ed60a90635d5e",
   "lastOpenFiles": [
-    "01-project-setup/1.3-rom-laden.md",
     "Kanban.base",
     "01-project-setup/1.4-testing.md",
+    "01-project-setup/1.3-rom-laden.md",
     "01-project-setup/1.2-sdl-venster.md",
     "01-project-setup/1.1-zig-project-init.md",
     "README.md",

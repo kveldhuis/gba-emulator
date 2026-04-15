@@ -2,6 +2,13 @@ const std = @import("std");
 const platform = @import("platform/renderer.zig");
 const GamePak = @import("core/gamepak.zig").GamePak;
 
+test {
+    _ = @import("core/bus.zig");
+    // Voeg hier toekomstige modules toe:
+    // _ = @import("core/cpu.zig");
+    // _ = @import("core/arm.zig");
+}
+
 pub fn main() !void {
     var args = std.process.args();
     _ = args.next();
