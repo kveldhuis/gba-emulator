@@ -3,7 +3,7 @@ views:
     name: View
     filters:
       and:
-        - epic == "01 - Project Setup"
+        - epic == "02 - Memory Bus"
     columnOrders:
       file.file:
         - 01-project-setup/1.3-rom-laden.md
@@ -92,8 +92,8 @@ views:
         - Uncategorized
       note.status:
         - todo
-        - in progress
         - done
+        - In Progress
     cardOrders:
       file.file: {}
       note.epic: {}
@@ -106,8 +106,10 @@ views:
           - 01-project-setup/1.3-rom-laden.md
           - 01-project-setup/1.4-testing.md
         in progress:
-          - 01-project-setup/1.5-debug-tooling.md
-        todo: []
+          - 02-memory-bus/2.1-memory-map.md
+        todo:
+          - 02-memory-bus/2.2-bus-gamepak.md
+          - 02-memory-bus/2.3-save-types.md
     columnColors:
       file.file: {}
       note.epic: {}

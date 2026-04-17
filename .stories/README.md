@@ -28,7 +28,7 @@ src/
 
 | # | Epic | Stories |
 |---|------|---------|
-| 1 | [01 - Project Setup](01-project-setup/) | 1.1, 1.2, 1.3, 1.4, 1.5 |
+| 1 | [01 - Project Setup](01-project-setup/) | 1.1, 1.2, 1.3, 1.4 |
 | 2 | [02 - Memory Bus](02-memory-bus/) | 2.1, 2.2 |
 | 3 | [03 - CPU ARM](03-cpu-arm/) | 3.1 t/m 3.11 |
 | 4 | [04 - CPU Thumb](04-cpu-thumb/) | 4.1 t/m 4.12 |
@@ -47,7 +47,7 @@ src/
 
 ### Eerste testbare milestone
 
-Na stap 1-9 kun je simpele homebrew ROMs draaien die iets op het scherm tekenen. Story 1.4 (testing) en 1.5 (debug tooling) helpen je om van begin af aan fouten op te sporen.
+Na stap 1-9 kun je simpele homebrew ROMs draaien die iets op het scherm tekenen. Story 1.4 (testing) helpt je om van begin af aan fouten op te sporen. Story 1.5 (debug tooling) wordt **gaanderweg** opgepakt — telkens wanneer je debug-hulpmiddelen nodig hebt tijdens de implementatie van een component.
 
 ## Accuracy verbeteren (optioneel)
 

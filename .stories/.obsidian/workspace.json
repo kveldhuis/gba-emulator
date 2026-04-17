@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-project-setup/1.5-debug-tooling.md",
+                "file": "02-memory-bus/2.1-memory-map.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1.5-debug-tooling"
+              "title": "2.1-memory-map"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01-project-setup/1.5-debug-tooling.md",
+                "file": "02-memory-bus/2.1-memory-map.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1.5-debug-tooling"
+              "title": "Backlinks for 2.1-memory-map"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01-project-setup/1.5-debug-tooling.md",
+                "file": "02-memory-bus/2.1-memory-map.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 1.5-debug-tooling"
+              "title": "Outgoing links from 2.1-memory-map"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-project-setup/1.5-debug-tooling.md",
+                "file": "02-memory-bus/2.1-memory-map.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1.5-debug-tooling"
+              "title": "Outline of 2.1-memory-map"
             }
           }
         ]
@@ -186,6 +186,9 @@
   "active": "ae2ed60a90635d5e",
   "lastOpenFiles": [
     "Kanban.base",
+    "02-memory-bus/2.2-bus-gamepak.md",
+    "02-memory-bus/2.1-memory-map.md",
+    "01-project-setup/1.5-debug-tooling.md",
     "01-project-setup/1.4-testing.md",
     "01-project-setup/1.3-rom-laden.md",
     "01-project-setup/1.2-sdl-venster.md",
