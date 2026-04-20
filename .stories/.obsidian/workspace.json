@@ -11,14 +11,13 @@
             "id": "ae2ed60a90635d5e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "02-memory-bus/2.1-memory-map.md",
-                "mode": "source",
-                "source": false
+                "file": "Kanban.base",
+                "viewName": "View"
               },
-              "icon": "lucide-file",
-              "title": "2.1-memory-map"
+              "icon": "columns",
+              "title": "Kanban"
             }
           }
         ]
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02-memory-bus/2.1-memory-map.md",
+                "file": "Kanban.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2.1-memory-map"
+              "title": "Backlinks for Kanban"
             }
           },
           {
@@ -113,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "02-memory-bus/2.1-memory-map.md",
+                "file": "Kanban.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2.1-memory-map"
+              "title": "Outgoing links from Kanban"
             }
           },
           {
@@ -156,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02-memory-bus/2.1-memory-map.md",
+                "file": "Kanban.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2.1-memory-map"
+              "title": "Outline of Kanban"
             }
           }
         ]
@@ -185,8 +184,8 @@
   },
   "active": "ae2ed60a90635d5e",
   "lastOpenFiles": [
-    "Kanban.base",
     "02-memory-bus/2.2-bus-gamepak.md",
+    "Kanban.base",
     "02-memory-bus/2.1-memory-map.md",
     "01-project-setup/1.5-debug-tooling.md",
     "01-project-setup/1.4-testing.md",

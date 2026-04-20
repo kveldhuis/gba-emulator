@@ -1,6 +1,6 @@
 const std = @import("std");
 const platform = @import("platform/renderer.zig");
-const GamePak = @import("core/gamepak.zig").GamePak;
+const Gba = @import("core/gba.zig").Gba;
 
 test {
     _ = @import("core/bus.zig");
@@ -22,14 +22,14 @@ pub fn main() !void {
     defer _ = gpa.deinit();
     const allocator = gpa.allocator();
 
-    var pak = GamePak.load(allocator, romPath) catch |err| {
-        std.debug.print("Couldn't load rom: {}\n", .{err});
-        return;
-    };
-    defer pak.deinit();
+    var gba = try Gba.init(allocator, romPath);
+    defer gba.deinit();
 
-    const trimmed = std.mem.trimRight(u8, &pak.title, &[_]u8{ 0, ' ' });
-    std.debug.print("Loaded: {s} ({d} bytes) \n", .{ trimmed, pak.rom.len });
+    const trimmed = std.mem.trimRight(u8, &gba.gamepak.title, &[_]u8{ 0, ' ' });
+    std.debug.print("Loaded: {s} ({d} bytes) \n", .{ trimmed, gba.gamepak.rom.len });
+
+    const entry = gba.bus.read32(0x08000000);
+    std.debug.print("Rom entry point: 0x{X:0>8}\n", .{entry});
 
     var renderer = platform.Renderer.init();
     defer renderer.deinit();

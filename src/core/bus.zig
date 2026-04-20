@@ -2,6 +2,7 @@ const std = @import("std");
 const expect = std.testing.expect;
 const expectEqual = std.testing.expectEqual;
 const log = std.log.scoped(.bus);
+const GamePak = @import("gamepak.zig").GamePak;
 
 const config = struct {
     const trace_memory = false; // log elke memory read/write
@@ -15,9 +16,12 @@ pub const Bus = struct {
     vram: [96 * 1024]u8 = undefined,
     oam: [1024]u8 = undefined,
     io: [1024]u8 = undefined,
+    gamepak: *GamePak,
 
-    pub fn init() Bus {
-        var bus = Bus{};
+    pub fn init(gamepak: *GamePak) Bus {
+        var bus = Bus{
+            .gamepak = gamepak,
+        };
 
         @memset(&bus.bios, 0);
         @memset(&bus.ewram, 0);
@@ -41,6 +45,9 @@ pub const Bus = struct {
             0x05 => self.palette[address & 0x3FF],
             0x06 => self.readVram(address),
             0x07 => self.oam[address & 0x3FF],
+            0x08, 0x09 => self.gamepakRead(address), // Rom mirror 1
+            0x0A, 0x0B => self.gamepakRead(address), // Rom mirror 2
+            0x0C, 0x0D => self.gamepakRead(address), // Rom Mirror 3
             else => 0,
         };
 
@@ -112,42 +119,91 @@ pub const Bus = struct {
     }
 
     pub fn write32(self: *Bus, address: u32, value: u32) void {
-        const aligned = address & ~@as(u32, 1);
+        const aligned = address & ~@as(u32, 3);
         self.write8(aligned, @truncate(value));
         self.write8(aligned + 1, @truncate(value >> 8));
         self.write8(aligned + 2, @truncate(value >> 16));
         self.write8(aligned + 3, @truncate(value >> 24));
     }
+
+    fn gamepakRead(self: *const Bus, address: u32) u8 {
+        const offset = address & 0x1FFFFFF;
+        if (offset < self.gamepak.rom.len) {
+            return self.gamepak.rom[offset];
+        }
+        return 0;
+    }
 };
 
 test "IWRAM read/write roundtrip u8" {
-    var bus = Bus.init();
+    var rom_data = [_]u8{ 0x78, 0x56, 0x34, 0x12 };
+    var pak = dummyGamePak(&rom_data);
+    var bus = Bus.init(&pak);
     bus.write8(0x03000000, 0x42);
     try expectEqual(@as(u8, 0x42), bus.read8(0x03000000));
 }
 
 test "IWRAM read/write roundtrip u32" {
-    var bus = Bus.init();
+    var rom_data = [_]u8{ 0x78, 0x56, 0x34, 0x12 };
+    var pak = dummyGamePak(&rom_data);
+    var bus = Bus.init(&pak);
     bus.write32(0x03000000, 0x12345678);
     try expectEqual(@as(u32, 0x12345678), bus.read32(0x03000000));
 }
 
 test "BIOS regio is read-only" {
-    var bus = Bus.init();
+    var rom_data = [_]u8{ 0x78, 0x56, 0x34, 0x12 };
+    var pak = dummyGamePak(&rom_data);
+    var bus = Bus.init(&pak);
     bus.write8(0x0000000, 0xFF);
     try expectEqual(@as(u8, 0), bus.read8(0x00000000));
 }
 
 test "little-endian read16 from two seperate bytes" {
-    var bus = Bus.init();
+    var rom_data = [_]u8{ 0x78, 0x56, 0x34, 0x12 };
+    var pak = dummyGamePak(&rom_data);
+    var bus = Bus.init(&pak);
     bus.write8(0x03000000, 0x78);
     bus.write8(0x03000001, 0x56);
     try expectEqual(@as(u16, 0x5678), bus.read16(0x03000000));
 }
 
 test "little-endian write16 reads as two bytes" {
-    var bus = Bus.init();
+    var rom_data = [_]u8{ 0x78, 0x56, 0x34, 0x12 };
+    var pak = dummyGamePak(&rom_data);
+    var bus = Bus.init(&pak);
+
     bus.write16(0x03000000, 0xABCD);
     try expectEqual(@as(u8, 0xCD), bus.read8(0x03000000)); // low byte
     try expectEqual(@as(u8, 0xAB), bus.read8(0x03000001)); // High byte
+}
+
+test "GamePak ROM read via bus" {
+    // Maak een kleine nep-ROM
+    var rom_data = [_]u8{ 0x78, 0x56, 0x34, 0x12 };
+    var pak = dummyGamePak(&rom_data);
+    var bus = Bus.init(&pak);
+
+    // Lees individuele bytes
+    try std.testing.expectEqual(@as(u8, 0x78), bus.read8(0x08000000));
+    try std.testing.expectEqual(@as(u8, 0x56), bus.read8(0x08000001));
+
+    // 32-bit little-endian read
+    try std.testing.expectEqual(@as(u32, 0x12345678), bus.read32(0x08000000));
+
+    // ROM mirror: 0x0A000000 leest dezelfde data
+    try std.testing.expectEqual(@as(u8, 0x78), bus.read8(0x0A000000));
+
+    // Read voorbij ROM-grootte geeft 0
+    try std.testing.expectEqual(@as(u8, 0), bus.read8(0x08000010));
+}
+
+fn dummyGamePak(romData: []u8) GamePak {
+    return GamePak{
+        .rom = romData,
+        .title = [_]u8{0} ** 12,
+        .game_code = [_]u8{0} ** 4,
+        .allocator = std.testing.allocator,
+        .rom_path = "test.gba",
+    };
 }
